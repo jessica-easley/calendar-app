@@ -1,25 +1,23 @@
-// Current Day/Date
-var todayDate = moment().format('dddd, MMM Do YYYY');
-$("#currentDay").html(todayDate);
-
 $(document).ready(function () {
+// Current Day/Date
+// var todayDate = moment().format('dddd, MMM Do YYYY');
+$("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
     // saveBtn click listener 
     $(".saveBtn").on("click", function () {
         // Get nearby values of the description in JQuery
         var text = $(this).siblings(".text").val();
         var time = $(this).parent().attr("id");
-
+        // console.log(this);
         // Save text in local storage
         localStorage.setItem(time, text);
     })
 // Time Section
 function timeTrack() {
  var currentTime = moment().hour();
-}
 // Time Block For Loops
 $(".time-block").each(function () {
     var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-    console.log( blockTime, currentTime)
+    console.log( blockTime, currentTime )
 
     if (blockTime < currentTime) {
         $(this).addClass("past");
@@ -28,27 +26,28 @@ $(".time-block").each(function () {
     }
 
     else if (blockTime === currentTime) {
-        $(this).addClass("present");
         $(this).removeClass("past");
+        $(this).addClass("present");
         $(this).removeClas("future");
     }
 
     else {
-        $(this).addClass("future");
         $(this).removeClass("present");
         $(this).removeClas("past");
+        $(this).addClass("future");
     }
 })
+}
 // Retrieve data back from local storage
-$("#9 .text").val(localStorage.getItem("9"));
-$("#10 .text").val(localStorage.getItem("10"));
-$("#11 .text").val(localStorage.getItem("11"));
-$("#12 .text").val(localStorage.getItem("12"));
-$("#1 .text").val(localStorage.getItem("1"));
-$("#2 .text").val(localStorage.getItem("2"));
-$("#3 .text").val(localStorage.getItem("3"));
-$("#4 .text").val(localStorage.getItem("4"));
-$("#5 .text").val(localStorage.getItem("5"));
+$("#hour9 .description").val(localStorage.getItem("hour9"));
+$("#hour10 .description").val(localStorage.getItem("hour10"));
+$("#hour11 .description").val(localStorage.getItem("hour11"));
+$("#hour12 .descriptiontext").val(localStorage.getItem("hour12"));
+$("#hour1 .description").val(localStorage.getItem("hour1"));
+$("#hour2 .description").val(localStorage.getItem("hour2"));
+$("#hour3 .description").val(localStorage.getItem("hour3"));
+$("#hour4 .description").val(localStorage.getItem("hour4"));
+$("#hour5 .description").val(localStorage.getItem("hour5"));
 
 timeTrack();
 })
