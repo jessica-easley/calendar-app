@@ -66,6 +66,15 @@ textarea{
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 24px;
   transition: all .3s ease-sin-out;
 }
+
+.fa-save {
+  font-size: 20px;
+}
+
+#currentDay {
+  margin-top: 30px;
+  font-size: 24px;
+ }
