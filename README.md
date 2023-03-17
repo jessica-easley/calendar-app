@@ -1,6 +1,6 @@
 # Work Day Scheduler Calendar Application
 
-# View the deployed app here: 
+# View the deployed app here: https://jessica-easley.github.io/calendar-app/
 
 # User Story
 AS AN employee with a busy schedule
@@ -24,5 +24,11 @@ THEN the saved events persist
 
 # Technologies Used 
 
-# Screenshots of Application
+ * HTML
+ * CSS
+ * Javascript
+ * Moment.js
 
+# Screenshot of Application
+
+![Work Day Scheduler](assets/images/calendar-app.png)
